@@ -1,14 +1,20 @@
-const getCharacters = async (page) => {
+export const getCharacters = async (page) => {
     const res = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
     const json = res.json();
     return json;
 }
 
-export default getCharacters;
+export const getOneCharacter = async (id) => {
+    const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+    const json = res.json();
+    return json;
+}
 
 
 // Rick and Morty API response
 // replace page query with /${character id} for api details page for specific character (same info as in array)
+//
+// Single return is single character object from results array
 //
 // {
 //     "info": {

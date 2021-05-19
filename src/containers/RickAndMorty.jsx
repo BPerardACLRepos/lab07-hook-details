@@ -1,7 +1,7 @@
 import React from 'react';
 import { loadingMessages } from '../../fixtures/loadingMessages';
 import CharacterList from '../components/characters/CharacterList';
-import getCharacters from '../services/rickAndMorty';
+import { getCharacters } from '../services/rickAndMorty';
 
 const RickAndMorty = () => {
     const [page, setPage] = React.useState(1);
