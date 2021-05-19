@@ -1,8 +1,10 @@
 const getCharacters = (page) => {
     const res = fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
     const json = res.json();
-    return json;
+    return json.results;
 }
+
+export default getCharacters;
 
 
 // Rick and Morty API response
