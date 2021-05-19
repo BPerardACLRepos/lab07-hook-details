@@ -37,18 +37,17 @@ const RickAndMorty = () => {
                     {page > 1 &&
                         <button onClick={() => setPage(page - 1)}>
                             Previous Page
-                        </button>}
+                                    </button>}
                     <p>{page}</p>
                     {page < lastPage &&
                         <button onClick={() => setPage(page + 1)}>
                             Next Page
-                        </button>}
+                                    </button>}
                 </div>
                 <div id="character-list">
                     <CharacterList characters={characters} />
                 </div>
             </>}
-
         </>
     );
 };
