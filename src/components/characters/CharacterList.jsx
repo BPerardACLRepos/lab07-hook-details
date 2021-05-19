@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes, { shape } from 'prop-types';
+import PropTypes from 'prop-types';
 import Character from './Character';
 
 const CharacterList = ({ characters }) => (
     <>
         <ul aria-label="character-list">
-            {characters.map(character => {
-                <li>
+            {characters.map(character => (
+                <li key={character.id}>
                     <Character {...character} />
                 </li>
-            })}
+            ))}
         </ul>
     </>
 );
