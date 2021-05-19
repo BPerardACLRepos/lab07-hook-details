@@ -1,4 +1,5 @@
 import React from 'react';
+import { loadingMessages } from '../../fixtures/loadingMessages';
 import getCharacters from '../services/rickAndMorty';
 
 const RickAndMorty = () => {
@@ -8,6 +9,7 @@ const RickAndMorty = () => {
 
     React.useEffect(() => {
         (async () => {
+            setLoading(true);
             const characters = await getCharacters(page);
             setCharacters(characters);
             setLoading(false);
@@ -16,7 +18,9 @@ const RickAndMorty = () => {
 
     return (
         <>
-            Yo
+            {loading &&
+                <h2>{loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}</h2>
+            }
         </>
     );
 };
