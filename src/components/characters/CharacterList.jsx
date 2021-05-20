@@ -7,7 +7,9 @@ const CharacterList = ({ characters }) => (
         <ul aria-label="character-list">
             {characters.map(character => (
                 <li key={character.id}>
-                    <Character {...character} />
+                    <a href={`/${character.id}`}>
+                        <Character {...character} />
+                    </a>
                 </li>
             ))}
         </ul>
