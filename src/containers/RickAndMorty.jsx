@@ -12,15 +12,12 @@ const RickAndMorty = () => {
     React.useEffect(() => {
         (async () => {
             setLoading(true);
-            console.log(page, 'BEFORE');
             const infoAndResults = await getCharacters(page);
-            console.log(infoAndResults, 'res');
             setTimeout(function () {
                 setCharacters(infoAndResults.results);
                 setLastPage(infoAndResults.info.pages);
                 setLoading(false);
             }, 2000);
-            console.log(characters, page, lastPage, 'AFTER');
         })();
     }, [page]);
 

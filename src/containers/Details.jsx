@@ -15,12 +15,10 @@ const Details = () => {
         (async () => {
             setLoading(true);
             const character = await getOneCharacter(charId);
-            console.log(character, charId, 'res');
             setTimeout(function () {
                 setOneCharacter(character);
                 setLoading(false);
             }, 2000);
-            console.log(oneCharacter, 'AFTER');
         })();
     }, [charId]);
 
