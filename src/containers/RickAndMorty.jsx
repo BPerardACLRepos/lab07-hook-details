@@ -21,30 +21,29 @@ const RickAndMorty = () => {
         })();
     }, [page]);
 
+    if (loading) return (
+        <>
+            <p>Loading...</p>
+            <h1>
+                {loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}
+            </h1>
+        </>
+    );
+
     return (
         <>
-            {loading && <>
-                <p>Loading...</p>
-                <h1>
-                    {loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}
-                </h1>
-            </>}
-            {!loading && <>
-                <div id="controls">
-                    {page > 1 &&
-                        <button onClick={() => setPage(page - 1)}>
-                            Previous Page
-                                    </button>}
-                    <p>{page}</p>
-                    {page < lastPage &&
-                        <button onClick={() => setPage(page + 1)}>
-                            Next Page
-                                    </button>}
-                </div>
-                <div id="character-list">
-                    <CharacterList characters={characters} />
-                </div>
-            </>}
+            <div id="controls">
+                <button disabled={page <= 1} onClick={() => setPage(page - 1)}>
+                    PREV
+                    </button>
+                <p>{page}</p>
+                <button disabled={page >= lastPage} onClick={() => setPage(page + 1)}>
+                    NEXT
+                    </button>
+            </div>
+            <div id="character-list">
+                <CharacterList characters={characters} />
+            </div>
         </>
     );
 };

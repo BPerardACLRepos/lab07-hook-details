@@ -22,24 +22,25 @@ const Details = () => {
         })();
     }, [charId]);
 
+    if (loading) return (
+        <>
+            <p>Loading...</p>
+            <h1>
+                {loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}
+            </h1>
+        </>
+    );
+
     return (
         <>
-            {loading && <>
-                <p>Loading...</p>
-                <h1>
-                    {loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}
-                </h1>
-            </>}
-            {!loading && <>
-                <div id="link">
-                    <a href="/">
-                        <p>Character List</p>
-                    </a>
-                </div>
-                <div>
-                    <Character {...oneCharacter} />
-                </div>
-            </>}
+            <div id="link">
+                <a href="/">
+                    <p>Character List</p>
+                </a>
+            </div>
+            <div>
+                <Character {...oneCharacter} />
+            </div>
         </>
     );
 };
