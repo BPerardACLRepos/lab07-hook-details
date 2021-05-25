@@ -1,0 +1,17 @@
+export const loadingMessages = [
+    '“If you spend all day shuffling words around, you can make anything sound bad.”- Rick ',
+    '“If I’ve learned one thing, it’s that before you get anywhere in life, you gotta stop listening to yourself”- Jerry',
+    '“I think you have to think ahead and live in the moment” – Rick ',
+    '“If you spend all day shuffling words around, you can make anything sound bad.”- Rick ',
+    '“Sometimes science is more art than science.” -Morty ',
+    '“It’s your choice to take this personally”-  Rick ',
+    '“You don’t love people in hopes of a reward, Dad. You love them unconditionally.”- Summer',
+    '“Life is effort. I’ll stop when I die!”- Jerry ',
+    '“How many of these are just horrible mistakes I made? I mean, maybe I’d stop making so many if I let myself learn from them.”- Morty',
+    '“Don’t make the same mistakes I made. Don’t deify the people who leave you.” – Beth ',
+    '“Nobody exists on purpose”- Morty',
+    '“That’s planning for failure Morty. Even dumber than regular planning.” – Rick ',
+    '“Mr. President, if I’ve learned one thing today it’s that sometimes you have to not give a f*ck!”- Morty.',
+    '“I’m sorry, but your opinion means very little to me.”- Rick',
+    '“To live is to risk it all.” -Rick',
+]
