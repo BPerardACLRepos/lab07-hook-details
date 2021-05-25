@@ -4,10 +4,10 @@ import CharacterList from '../components/characters/CharacterList';
 import Loading from '../components/characters/Loading';
 import Pagination from '../components/characters/Pagination';
 
-import { handlePage } from '../hooks/pageAndCharacters';
+import { handleList } from '../hooks/pageAndCharacters';
 
 const RickAndMorty = () => {
-    const { loading, page, lastPage, characters, setPage } = handlePage();
+    const { loading, page, lastPage, characters, setPage } = handleList();
 
     if (loading) return <Loading />;
 

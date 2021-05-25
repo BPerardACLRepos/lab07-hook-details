@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 
 const CharacterList = ({ characters }) => {
 
     return (
-        <>
-            <ul aria-label="character-list">
-                {characters.map(character => (
-                    <li key={character.id}>
+        <ul aria-label="character-list">
+            {characters.map(character => (
+                <li key={character.id}>
+                    <Router>
                         <Link to={`/${character.id}`}>
                             <Character {...character} />
                         </Link>
-                    </li>
-                ))}
-            </ul>
-        </>
+                    </Router>
+                </li>
+            ))}
+        </ul>
     );
 };
 

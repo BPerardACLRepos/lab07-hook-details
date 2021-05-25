@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => (
     <nav>
-        <Link to="/">
+        <Link aria-label="character-list-link" to="/">
             CHARACTER LIST
         </Link>
     </nav>
