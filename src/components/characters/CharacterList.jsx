@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
+import { Link } from 'react-router-dom';
+import { handlePage } from '../../hooks/pageAndCharacters';
 
-const CharacterList = ({ characters }) => (
-    <>
-        <ul aria-label="character-list">
-            {characters.map(character => (
-                <li key={character.id}>
-                    <a href={`/${character.id}`}>
-                        <Character {...character} />
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </>
-);
+const CharacterList = ({ characters }) => {
+
+    return (
+        <>
+            <ul aria-label="character-list">
+                {characters.map(character => (
+                    <li key={character.id}>
+                        <Link to={`/${character.id}`}>
+                            <Character {...character} />
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
+};
 
 CharacterList.propTypes = {
     characters: PropTypes.arrayOf(

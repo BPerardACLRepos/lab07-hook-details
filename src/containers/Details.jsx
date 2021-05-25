@@ -5,6 +5,8 @@ import {
 import { getOneCharacter } from '../services/rickAndMorty';
 import Character from '../components/characters/Character';
 import { loadingMessages } from '../../fixtures/loadingMessages';
+import Header from '../components/characters/Header';
+import Loading from '../components/characters/Loading';
 
 const Details = () => {
     const [loading, setLoading] = React.useState(true);
@@ -22,25 +24,12 @@ const Details = () => {
         })();
     }, [charId]);
 
-    if (loading) return (
-        <>
-            <p>Loading...</p>
-            <h1>
-                {loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}
-            </h1>
-        </>
-    );
+    if (loading) return <Loading />;
 
     return (
         <>
-            <div id="link">
-                <a href="/">
-                    <p>Character List</p>
-                </a>
-            </div>
-            <div>
-                <Character {...oneCharacter} />
-            </div>
+            <Header />
+            <Character {...oneCharacter} />
         </>
     );
 };
